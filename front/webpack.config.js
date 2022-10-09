@@ -1,12 +1,10 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 let mode = "development";
 const plugins = [
   new CleanWebpackPlugin(),
-  new MiniCssExtractPlugin(),
   new HtmlWebpackPlugin({
     template: "./src/index.html",
   }),
@@ -32,15 +30,8 @@ module.exports = {
         type: "asset",
       },
       {
-        test: /\.css$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: "" },
-          },
-          "css-loader",
-          "sass-loader",
-        ],
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
       },
       {
         test: /\.js$/,
@@ -52,6 +43,7 @@ module.exports = {
               "@babel/preset-env",
               ["@babel/preset-react", { runtime: "automatic" }],
             ],
+            plugins: ["babel-plugin-styled-components"],
           },
         },
       },
