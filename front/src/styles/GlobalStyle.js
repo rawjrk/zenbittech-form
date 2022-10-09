@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
   html, body {
     font-family: 'HK Grotesk', sans-serif;
+    margin: 0;
   }
 `;
 
@@ -34,7 +35,8 @@ export const COLORS = {
   RED: "#f472b7",
   YELLOW: "#fad34f",
   GREEN: "#46ebb0",
-  CLOUDS: "#c6c6c6",
-  FOOTER: "#d8d8d8",
-  LINKS: "#696969",
+  CLOUD: "#c6c6c6",
+  BORDER: "#d8d8d8",
+  FOOTER: "#fafafa",
+  LINK: "#696969",
 };
