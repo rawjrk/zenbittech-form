@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const router = require("./routes");
 const AppError = require("./utils/AppError");
 const errorHandler = require("./utils/errorHandler");
@@ -6,6 +7,7 @@ const errorHandler = require("./utils/errorHandler");
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/request", router);
