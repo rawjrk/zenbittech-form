@@ -5,15 +5,13 @@ const bgColor = C.YELLOW;
 
 const Button = styled.button`
   display: block;
-
-  border: none;
-  border-radius: 2em;
-  background-color: ${bgColor};
-  color: white;
-
-  padding: 1.5em 3em;
   font-size: 1.1rem;
   font-weight: 500;
+  color: white;
+  background-color: ${bgColor};
+  border: none;
+  padding: 1.5em 3em;
+  border-radius: 2em;
 `;
 
 export default Button;
