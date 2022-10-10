@@ -4,6 +4,7 @@ import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 import SocialLinks from "./SocialLinks";
 import links from "../links";
+import createRequest from "../api/createRequest";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <GlobalStyle />
       <main>
         <Header>Reach out to us!</Header>
-        <ContactForm onSubmit={console.log} />
+        <ContactForm onSubmit={createRequest} />
       </main>
       <Footer>
         <SocialLinks links={links} />

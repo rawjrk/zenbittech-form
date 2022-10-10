@@ -1,22 +1,30 @@
+import { useEffect, useState } from "react";
 import { useInput } from "../hooks";
 import Input from "./Input";
 import Button from "./Button";
+import ErrorLog from "./ErrorLog";
 
 function ContactForm({ onSubmit = (f) => f }) {
-  const [nameProps, resetName] = useInput("");
-  const [emailProps, resetEmail] = useInput("");
-  const [messageProps, resetMessage] = useInput("");
+  const [nameProps, resetName] = useInput("", "name");
+  const [emailProps, resetEmail] = useInput("", "email");
+  const [messageProps, resetMessage] = useInput("", "message");
+  const [error, setError] = useState("");
 
-  const submit = (e) => {
-    e.preventDefault();
-    onSubmit({
-      name: nameProps.value,
-      email: emailProps.value,
-      message: messageProps.value,
-    });
+  const resetForm = () => {
     resetName();
     resetEmail();
     resetMessage();
+    setError("");
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+    const data = {
+      name: nameProps.value,
+      email: emailProps.value,
+      message: messageProps.value,
+    };
+    onSubmit(data, resetForm, setError);
   };
 
   return (
@@ -30,6 +38,7 @@ function ContactForm({ onSubmit = (f) => f }) {
         required
       />
       <Button type="submit">Send message</Button>
+      {error ? <ErrorLog text="Something went wrong." /> : null}
     </form>
   );
 }
