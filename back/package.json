@@ -13,7 +13,9 @@
   "author": "RawJrk (https://github.com/rawjrk)",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "eslint": "^8.25.0",

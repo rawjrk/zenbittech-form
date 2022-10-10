@@ -1,21 +1,21 @@
 const express = require("express");
+const router = require("./routes");
+const AppError = require("./utils/appError");
+const errorHandler = require("./utils/errorHandler");
+
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send({
-    code: 200,
-    message: "Success!",
-  });
+app.use(express.json());
+
+app.use("/request", router);
+
+app.all("*", (req, res, next) => {
+  next(new AppError(`The URL ${req.originalUrl} does not exists`, 404));
 });
 
-app.get("*", (req, res) => {
-  res.status(404).send({
-    code: 404,
-    message: "Not Found: invalid endpoint",
-  });
-});
+app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
