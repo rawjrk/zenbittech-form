@@ -2,13 +2,13 @@ const conn = require("../services/db");
 const AppError = require("../utils/AppError");
 
 module.exports.getAllRequests = (req, res, next) => {
-  conn.query("SELECT * FROM request", function (err, data, fields) {
+  conn.query("SELECT * FROM request", (err, data) => {
     if (err) return next(new AppError(err));
 
     res.status(200).json({
       status: "success",
       length: data?.length,
-      data: data,
+      data,
     });
   });
 };
@@ -17,13 +17,13 @@ module.exports.getRequestById = (req, res, next) => {
   conn.query(
     "SELECT * FROM request WHERE id = ?",
     [req.params.id],
-    function (err, data, fields) {
+    (err, data) => {
       if (err) return next(new AppError(err));
 
       res.status(200).json({
         status: "success",
         length: data?.length,
-        data: data,
+        data,
       });
     }
   );
@@ -34,7 +34,7 @@ module.exports.postNewRequest = (req, res, next) => {
 
   const { name, email, message } = req.body;
 
-  let missingFields = [];
+  const missingFields = [];
   if (!name) missingFields.push("name");
   if (!email) missingFields.push("email");
   if (!message) missingFields.push("message");
@@ -53,7 +53,7 @@ module.exports.postNewRequest = (req, res, next) => {
   conn.query(
     "INSERT INTO request (name, email, message) VALUES(?)",
     [values],
-    function (err, data, fields) {
+    (err) => {
       if (err) return next(new AppError(err, 500));
 
       res.status(201).json({

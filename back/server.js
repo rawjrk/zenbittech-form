@@ -1,6 +1,6 @@
 const express = require("express");
 const router = require("./routes");
-const AppError = require("./utils/appError");
+const AppError = require("./utils/AppError");
 const errorHandler = require("./utils/errorHandler");
 
 const app = express();
@@ -17,5 +17,5 @@ app.all("*", (req, res, next) => {
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+  console.log(`Listening on port ${PORT}`); // eslint-disable-line no-console
 });

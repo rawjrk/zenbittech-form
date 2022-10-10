@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
+  require("dotenv").config(); // eslint-disable-line global-require
 }
 
 const mysql = require("mysql");
