@@ -36,7 +36,8 @@ export const COLORS = {
   YELLOW: "#fad34f",
   GREEN: "#46ebb0",
   CLOUD: "#c6c6c6",
-  BORDER: "#d8d8d8",
-  FOOTER: "#fafafa",
+  INPUT_BORDER: "#dcdcdc",
+  FOOTER_BORDER: "#d8d8d8",
+  FOOTER_BG: "#fafafa",
   LINK: "#696969",
 };

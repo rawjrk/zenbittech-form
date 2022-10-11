@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useInput } from "../hooks";
 import Input from "./Input";
 import Button from "./Button";
@@ -37,7 +37,9 @@ function ContactForm({ onSubmit = (f) => f }) {
         placeholder="Your message*"
         required
       />
-      <Button type="submit">Send message</Button>
+      <Button type="submit" style={{ marginTop: "23px" }}>
+        Send message
+      </Button>
       {error ? <ErrorLog text="Something went wrong." /> : null}
     </form>
   );

@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import { COLORS as C } from "../styles/GlobalStyle";
+import { centerElementsFlex } from "../styles/templates";
+
+const LinksPanel = styled.div`
+  ${centerElementsFlex}
+`;
 
 const Link = styled.a`
   color: ${C.LINK};
+  margin: 12px;
 `;
 
-const LinksPanel = styled.div`
-  display: flex;
-`;
-
-function SocialLinks({ links = [] }) {
+function SocialLinks({ links = [], style = {} }) {
   return (
-    <LinksPanel>
+    <LinksPanel style={style}>
       {links.map((l, i) => (
         <Link key={i} href={l.url}>
           {l.logo}
