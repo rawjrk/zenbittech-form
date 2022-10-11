@@ -1,7 +1,7 @@
 import { COLORS as C } from "../styles/GlobalStyle";
 
 export const inputStyles = `
-  width: 600px;
+  width: 557px;
   max-width: 60vw;
 
   margin-bottom: 0.5rem;

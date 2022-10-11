@@ -9,10 +9,10 @@ function GoodiesDecoration({ zIndex = -1 }) {
     <>
       <Hide breakpoint="1200px">
         <RedGoodie
-          style={{ zIndex, position, bottom: "270px", right: "350px" }}
+          style={{ zIndex, position, bottom: "320px", right: "420px" }}
         />
         <YellowGoodie
-          style={{ zIndex, position, bottom: "440px", right: "475px" }}
+          style={{ zIndex, position, bottom: "490px", right: "540px" }}
         />
       </Hide>
 
@@ -25,7 +25,7 @@ function GoodiesDecoration({ zIndex = -1 }) {
           style={{ zIndex, position, top: "40px", left: "46px" }}
         />
         <RedGoodie
-          style={{ zIndex, position, bottom: "-15px", left: "60px" }}
+          style={{ zIndex: 2, position, bottom: "-15px", left: "60px" }}
         />
         <SmallYellowGoodie
           style={{ zIndex: 2, position, bottom: "40px", right: "-25px" }}
