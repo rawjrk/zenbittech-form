@@ -1,3 +1,26 @@
+import { COLORS as C } from "../styles/GlobalStyle";
+
+export const inputStyles = `
+  width: 600px;
+  max-width: 60vw;
+
+  margin-bottom: 0.5rem;
+  border: 1px solid ${C.INPUT_BORDER};
+  border-radius: 10px;
+  display: block;
+
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: black;
+  }
+`;
+
 const centerElementsTemplate = `
   display: [display];
   align-items: center;

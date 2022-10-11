@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useInput } from "../hooks";
 import Input from "./Input";
-import Button from "./Button";
+import TextArea from "./TextArea";
+import YellowButton from "./YellowButton";
 import ErrorLog from "./ErrorLog";
 
 function ContactForm({ onSubmit = (f) => f }) {
@@ -31,15 +32,15 @@ function ContactForm({ onSubmit = (f) => f }) {
     <form onSubmit={submit}>
       <Input {...nameProps} type="text" placeholder="Your name*" required />
       <Input {...emailProps} type="email" placeholder="Your e-mail*" required />
-      <Input
+      <TextArea
         {...messageProps}
         type="text"
         placeholder="Your message*"
         required
       />
-      <Button type="submit" style={{ marginTop: "23px" }}>
+      <YellowButton type="submit" style={{ marginTop: "23px" }}>
         Send message
-      </Button>
+      </YellowButton>
       {error ? <ErrorLog text="Something went wrong." /> : null}
     </form>
   );

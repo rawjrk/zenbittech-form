@@ -26,12 +26,19 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     font-family: 'HK Grotesk', sans-serif;
     margin: 0;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-height: 750px) {
+      overflow: scroll;
+    }
   }
 `;
 
 export default GlobalStyle;
 
 export const COLORS = {
+  ERROR: "#de0000",
   RED: "#f472b7",
   YELLOW: "#fad34f",
   GREEN: "#46ebb0",

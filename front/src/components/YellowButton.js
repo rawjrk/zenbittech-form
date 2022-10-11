@@ -4,7 +4,6 @@ import { COLORS as C } from "../styles/GlobalStyle";
 const bgColor = C.YELLOW;
 
 const Button = styled.button`
-  display: block;
   font-size: 1.1rem;
   font-weight: 500;
   color: white;
