@@ -1,12 +1,13 @@
 import { RedGoodie, SmallYellowGoodie, YellowGoodie } from "./Goodies";
 import BackgroundMap from "./BackgroundMap";
+import Overflow from "./Overflow";
 import Hide from "./Hide";
 
 function GoodiesDecoration({ zIndex = -1 }) {
   const position = "absolute";
 
   return (
-    <>
+    <Overflow style={{ position }}>
       <Hide breakpoint="1200px">
         <RedGoodie
           style={{ zIndex, position, bottom: "320px", right: "420px" }}
@@ -31,7 +32,7 @@ function GoodiesDecoration({ zIndex = -1 }) {
           style={{ zIndex: 2, position, bottom: "40px", right: "-25px" }}
         />
       </Hide>
-    </>
+    </Overflow>
   );
 }
 

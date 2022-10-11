@@ -13,12 +13,12 @@ import { GreenGoodie } from "./Goodies";
 function App() {
   return (
     <>
+      <GlobalStyle />
       <BackgroundClouds
         style={{ zIndex: -3, position: "absolute", top: 0, left: 0 }}
       />
-      <GoodiesDecoration />
+      <GoodiesDecoration zIndex={-1} />
       <AppGrid style={{ width: "100vw", height: "100vh" }}>
-        <GlobalStyle />
         <Main>
           <Margin length="2em">
             <Header style={{ marginBottom: "50px" }}>Reach out to us!</Header>

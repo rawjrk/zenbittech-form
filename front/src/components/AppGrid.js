@@ -8,13 +8,14 @@ const AppGrid = styled.div`
 `;
 
 export const Main = styled.main`
+  position: relative;
+
   grid-row-start: 1;
   ${centerElementsGrid}
 `;
 
 export const Footer = styled.footer`
   position: relative;
-
   grid-row-start: 2;
   grid-column-start: 1;
   grid-column-end: 3;
