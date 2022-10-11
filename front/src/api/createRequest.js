@@ -1,4 +1,4 @@
-const API_URI = "http://localhost:3000";
+const API_URI = "https://glacial-brook-85348.herokuapp.com";
 
 const createRequest = async (data, resolve, reject) => {
   try {
