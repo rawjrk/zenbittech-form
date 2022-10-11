@@ -6,12 +6,16 @@ import ContactForm from "./ContactForm";
 import createRequest from "../api/createRequest";
 import SocialLinks from "./SocialLinks";
 import links from "../links";
+import BackgroundClouds from "./BackgroundClouds";
 import GoodiesDecoration from "./GoodiesDecoration";
 import { GreenGoodie } from "./Goodies";
 
 function App() {
   return (
     <>
+      <BackgroundClouds
+        style={{ zIndex: -3, position: "absolute", top: 0, left: 0 }}
+      />
       <GoodiesDecoration />
       <AppGrid style={{ width: "100vw", height: "100vh" }}>
         <GlobalStyle />
